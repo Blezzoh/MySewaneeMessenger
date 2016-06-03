@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DannyAndBlase.iml" filepath="$PROJECT_DIR$/.idea/modules/DannyAndBlase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DannyAndBlase_main.iml" filepath="$PROJECT_DIR$/.idea/modules/DannyAndBlase_main.iml" group="DannyAndBlase" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DannyAndBlase_test.iml" filepath="$PROJECT_DIR$/.idea/modules/DannyAndBlase_test.iml" group="DannyAndBlase" />
+    </modules>
+  </component>
+</project>

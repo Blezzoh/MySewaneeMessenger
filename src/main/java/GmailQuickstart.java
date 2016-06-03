@@ -1,36 +1,11 @@
-import com.google.api.client.auth.oauth2.Credential;
-import com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInstalledApp;
-import com.google.api.client.extensions.jetty.auth.oauth2.LocalServerReceiver;
-import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow;
-import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
-import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
-import com.google.api.client.http.HttpTransport;
-import com.google.api.client.json.JsonFactory;
-import com.google.api.client.json.jackson2.JacksonFactory;
-import com.google.api.client.repackaged.org.apache.commons.codec.binary.StringUtils;
-import com.google.api.client.util.Base64;
+
 import com.google.api.client.util.store.FileDataStoreFactory;
-import com.google.api.services.gmail.Gmail;
-import com.google.api.services.gmail.GmailScopes;
-import com.google.api.services.gmail.model.Label;
-import com.google.api.services.gmail.model.ListLabelsResponse;
-import com.google.api.services.gmail.model.ListMessagesResponse;
-import com.google.api.services.gmail.model.Message;
 
 import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Properties;
 
 public class GmailQuickstart {
+    /*
 
     private static final String FROM_ADDRESS = "evansdb0@sewanee.edu";
     private static final String TO_ADDRESS = "iradub0@sewanee.edu";
@@ -46,40 +21,52 @@ public class GmailQuickstart {
     public static final int TO = 8;
     public static final int CONTENT_TYPE = 9;
 
-    /**
+    */
+/**
      * Application name.
-     */
+     *//*
+
     private static final String APPLICATION_NAME =
             "Gmail API Java Quickstart";
 
-    /**
+    */
+/**
      * Directory to store user credentials for this application.
-     */
+     *//*
+
     private static final java.io.File DATA_STORE_DIR = new java.io.File(
             System.getProperty("user.home"), ".credentials/gmail-java-quickstart.json");
 
-    /**
+    */
+/**
      * Global instance of the {@link FileDataStoreFactory}.
-     */
+     *//*
+
     private static FileDataStoreFactory DATA_STORE_FACTORY;
 
-    /**
+    */
+/**
      * Global instance of the JSON factory.
-     */
+     *//*
+
     private static final JsonFactory JSON_FACTORY =
             JacksonFactory.getDefaultInstance();
 
-    /**
+    */
+/**
      * Global instance of the HTTP transport.
-     */
+     *//*
+
     private static HttpTransport HTTP_TRANSPORT;
 
-    /**
+    */
+/**
      * Global instance of the scopes required by this quickstart.
      * <p>
      * If modifying these scopes, delete your previously saved credentials
      * at ~/.credentials/gmail-java-quickstart.json
-     */
+     *//*
+
     private static final List<String> SCOPES =
             Arrays.asList(GmailScopes.GMAIL_LABELS
                     , GmailScopes.GMAIL_COMPOSE
@@ -135,7 +122,8 @@ public class GmailQuickstart {
 
         // Print the labels in the user's account.
         String user = "me";
-        /*ListLabelsResponse listResponse =
+        */
+/*ListLabelsResponse listResponse =
                 service.users().labels().list(user).execute();
         List<Label> labels = listResponse.getLabels();
         if (labels.size() == 0) {
@@ -145,7 +133,8 @@ public class GmailQuickstart {
             for (Label label : labels) {
                 System.out.printf("- %s\n", label.getName());
             }
-        }*/
+        }*//*
+
         listMessagesMatchingQuery(service,"me","barbara banks");
     }
     public static List<Message> listMessagesMatchingQuery(Gmail service, String userId,
@@ -172,13 +161,16 @@ public class GmailQuickstart {
 
         return messages;
     }
-    /**
+    */
+/**
      * Creates an authorized Credential object.
      *
      * @return an authorized Credential object.
      * @throws IOException
-     */
-    public static Credential authorize() throws IOException {
+     *//*
+
+*/
+/*    public static Credential authorize() throws IOException {
         // Load client secrets.
         InputStream in =
                 GmailQuickstart.class.getResourceAsStream("/client_secret.json");
@@ -197,14 +189,17 @@ public class GmailQuickstart {
         System.out.println(
                 "Credentials saved to " + DATA_STORE_DIR.getAbsolutePath());
         return credential;
-    }
+    }*//*
 
-    /**
+
+    */
+/**
      * Build and return an authorized Gmail client service.
      *
      * @return an authorized Gmail client service
      * @throws IOException
-     */
+     *//*
+
     public static Gmail getGmailService() throws IOException {
         Credential credential = authorize();
         return new Gmail.Builder(HTTP_TRANSPORT, JSON_FACTORY, credential)
@@ -212,7 +207,8 @@ public class GmailQuickstart {
                 .build();
     }
 
-    /**
+    */
+/**
      * Create a MimeMessage using the parameters provided.
      *
      * @param to       email address of the receiver
@@ -221,7 +217,8 @@ public class GmailQuickstart {
      * @param bodyText body text of the email
      * @return the MimeMessage to be used to send email
      * @throws MessagingException
-     */
+     *//*
+
     public static MimeMessage createEmail(String to, String from, String subject,
                                           String bodyText) throws MessagingException {
         Properties props = new Properties();
@@ -245,26 +242,26 @@ public class GmailQuickstart {
 
         System.out.println("Message Id:" + message.getId());
         System.out.println(message.toPrettyString());
-
     }
 
-    /**
+    */
+/**
      * Create a Message from an email
      *
      * @param email Email to be set to raw of message
      * @return Message containing base64 encoded email.
      * @throws IOException
      * @throws MessagingException
-     */
+     *//*
+
     private static Message createMessageWithEmail(MimeMessage email)
             throws MessagingException, IOException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         email.writeTo(baos);
-        System.out.println("\nBAOS:\n" + baos);
         String encodedEmail = Base64.encodeBase64URLSafeString(baos.toByteArray());
         Message message = new Message();
         message.setRaw(encodedEmail);
         return message;
     }
 
-}
+*/}
